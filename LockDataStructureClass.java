@@ -15,7 +15,7 @@ public class LockDataStructureClass implements LockADT {
 	public static final int COUNTER_CLOCK = 1;
 	Scanner scan = new Scanner(System.in);
 	
-	public LockDataStructureClass() {
+	public LockDataStructureClass() { //Default constructor for lock
 		x = 0;
 		y = 0;
 		z = 0;
@@ -24,39 +24,39 @@ public class LockDataStructureClass implements LockADT {
 		status = false;
 	}
 	
-	public LockDataStructureClass(int x, int y, int z) {
+	public LockDataStructureClass(int x, int y, int z) { //Over-loaded constructor
 		this.x = x;
 		this.y = y;
 		this.z = z;
 	}
 	
-	public void setX(int x1) {
+	public void setX(int x1) { //sets 1st num in combination
 		this.x = x1;
 	}
 	
-	public void setY(int y1) {
+	public void setY(int y1) { //sets 2nd num in combination
 		this.y = y1;
 	}
 	
-	public void setZ(int z1) {
+	public void setZ(int z1) { //sets 3rd num in combination
 		this.z = z1;
 	}
 	
-	public void alter(int x1, int y1, int z1) {
+	public void alter(int x1, int y1, int z1) { //allows user to alter combination
 		setX(x1);
 		setY(y1);
 		setZ(z1);	
 	}
 	
-	public void setCurrently(int cur) {
+	public void setCurrently(int cur) { //sets the number that is currently at the top of the lock
 		this.top = cur;
 	}
 	
-	public int currently() {
+	public int currently() { //returns the current number at top of lock
 		return top;
 	}
 	
-	public void turn(int direction, int number) {
+	public void turn(int direction, int number) { //turns the lock in a specific direction and to a specific number
 		int i = top;
 		int numbersPassed = 0;
 		
@@ -131,15 +131,15 @@ public class LockDataStructureClass implements LockADT {
 		rotation++;
 	}
 	
-	public void close() {
+	public void close() { //closes the lock
 		status = false;
 	}
 	
-	public boolean inquire() {
+	public boolean inquire() { //returns status of lock
 		return status;
 	}
 	
-	public boolean attempt() {
+	public boolean attempt() { //attempts to open lock, calls turn method
 		int firstStop = -1;
 
 		int secondStop = -1;
